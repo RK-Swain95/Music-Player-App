@@ -1,0 +1,633 @@
+:root {
+	--background-image: url("media/background_image/3541800.jpg");
+	--jumbotron-color: #141b41;
+	--playlist-items-background-color: #1a1e33;
+	--playlist-items-background-color-on-hover: #2e3249;
+}
+body {
+	/* background-image: var(--background-image); */
+	background-color: #2e3249;
+	
+/* 	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat; */
+	margin: 0px;
+	font-family: "Segoe UI", Arial, sans-serif;
+	color: white;
+}
+/* removing all the styles from the links and formatting them white */
+a {
+	text-decoration: none;
+	color: white;
+}
+/* removing margin for all the textual elements */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	margin: 0px;
+}
+/* top navigation bar */
+.color-white{
+    color: aliceblue;
+}
+.nav{
+    width:100%;
+    height:70px;
+    background-color: transparent;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    /* border:2px solid green; */
+    padding:0px 10px;
+    /* margin:8px 0px; */
+
+}
+.left-section{
+    height: 70%;
+    display: flex;
+    align-items: center;
+    /* overflow-y: scroll; */
+    /* border:2px solid red; */
+ }
+ .logo-image{
+    height: 140%;
+    margin-left: 15px;
+}
+.logo-text{
+    Color:rgb(214, 197, 197);
+    margin-left:60px ;
+    font-size:0.8rem;
+
+}
+.right-section{
+    width:45%;
+    height:inherit;
+    /* border:2px solid black; */
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.nav-buttons{
+    display: flex;
+    width:55%;
+    height:1.8rem;
+    /* border:2px solid red; */
+    /* display:flex; */
+    /* max-width: 200px; */
+    background-color: rgb(58, 51, 58);
+    border-radius:8px;
+}
+
+.nav-buttons button,input{
+    background: transparent;
+    /* background-color: rgb(86, 46, 86); */
+    border: 0px transparent;
+    outline: none;
+    /* height:1.5rem; */
+}
+
+.nav-buttons button i{
+    color:aliceblue;
+    padding: 3px;
+    cursor: pointer;
+}
+.nav-buttons input{
+    margin-left: 5px;
+    font-size: 1rem;
+    width:100%;
+}
+.profile-logo{
+    width: 20%;
+    height: inherit;
+    /* border: 2px solid red; */
+    
+    
+}
+ .profile-logo img{
+    height:70%;
+    width:48%;
+    border-radius:50%;
+    /* padding:3px; */
+    margin: 6px 0px 0px 0px;
+}
+.notify{
+    animation: shake 1s ease-in-out infinite alternate-reverse;
+}
+@keyframes shake{
+    0%{
+        transform: rotate(0deg);
+        color:aliceblue;
+    }
+    50%{
+        transform: rotate(-70deg);
+        color:#40126f;
+    }
+    100%{
+        transform: rotate(70deg);
+        color:red;
+    }
+} 
+/* navigation bar is completed here */
+/* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+/* main */
+main {
+	width: 100%;
+	padding: 0% 3%;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	transition: all ease-in-out 1s;
+}
+/* there are two aside sections both of them will have this class 
+(I have taken care of the re-usability of the classes and removed redundancy) */
+.aside {
+	display: inline-block;
+	overflow: hidden;
+}
+/* section one of the main part */
+.section-1 {
+	width: 70%;
+	height: 81vh;
+	overflow: scroll;
+}
+/* overflow should be scrollable but the scroll bar should be hidden*/
+.section-1::-webkit-scrollbar {
+	display: none;
+}
+/* section 2 of the main part */
+.section-2 {
+	width: 28%;
+	height: 85vh;
+	z-index: 2;
+}
+
+/* aside section 1 */
+/* jumbotron */
+.jumbotron {
+	height: 20vw;
+	width: 100%;
+	margin-top: 12px;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	background-color: var(--playlist-items-background-color);
+	margin-bottom: 40px;
+	position: relative;
+}
+/* image insider jumbotron */
+.jumbotron-image {
+	height: 20vw;
+	width: 20vw;
+	background-image: linear-gradient(
+			to bottom,
+			transparent,
+			rgba(20, 27, 65, 1)
+		),
+		url("../image/singleartist/arijit.jpg");
+	background-size: cover;
+}
+/* right part of the jumbotron */
+.jumbotron-detail {
+	width: 67%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	box-sizing: border-box;
+	padding-right: 12px;
+}
+/* descriptive part contains the descripton of the song and action part contains the follow and play buttons */
+.descriptive-part,
+.action-part {
+	width: 100%;
+	height: max-content;
+}
+/* song name and followers */
+.song-name-main,
+.followers {
+	display: inline-block;
+}
+/* song name heading properties */
+.song-name-main h1 {
+	font-size: 2vw;
+}
+/* follower count */
+.followers {
+	position: absolute;
+	right: 0%;
+	top: 5%;
+}
+/* self explanatory */
+.followers,
+.author {
+	font-size: 1.5vw;
+}
+/* description of the jumbotron */
+.desc {
+	font-size: 1vw;
+}
+/* action part */
+/* .action-part {
+	padding-top: 2vw;
+} */
+.action-part p {
+	font-size: 1vw;
+}
+.btns > button {
+	border: 0px;
+	height: 3vw;
+	width: 10vw;
+	color: white;
+	font-size: 1.2vw;
+}
+/* play button */
+.btns > button:nth-child(1) {
+	background-image: linear-gradient(-19deg, red 0%, blue 100%);
+}
+/* follow button */
+.btns > button:nth-child(2) {
+	background-color: transparent;
+}
+/* particular item in the playlist */
+.playlist-item {
+	/* height:60px;
+    width:100%; */
+	height: 8vh;
+
+	box-sizing: border-box;
+	background-color: var(--playlist-items-background-color);
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 12px;
+	/* transition: all ease-in-out 0.1s; */
+}
+/* playlist item hovering effects */
+.playlist-item:hover {
+	background-color: var(--playlist-items-background-color-on-hover);
+}
+/* left part if the playlist item */
+.left {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+	width: 30%;
+	height: 100%;
+	padding: 0% 1%;
+}
+/* center part of the playlist item which contains the duration length of the song */
+.center {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	width: min-content;
+	height: 100%;
+}
+/* right part of the playlist item, which contains icons */
+.right {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	width: 50px;
+	height: 100%;
+	padding-right: 2%;
+}/* now adjusting the contents of left, center and right parts */
+.left > div:nth-child(2) {
+	height: 80%;
+	min-width: 50px;
+	max-width: 50px;
+	margin: 0px 12% 0px 12%;
+	position: relative;
+}
+.left > div:nth-child(2) img {
+	width: 100%;
+	height: 100%;
+}
+.left > div:nth-child(3) p {
+	color: rgb(185, 185, 185);
+}
+/* customizing the play button */
+.play-btn {
+	background-color: black;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	opacity: 0;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	transition: all ease-in-out 0.1s;
+}
+/* on hover effects */
+.play-btn:hover {
+	opacity: 0.7;
+}
+/* adjusting fonts in the playlist items  */
+.left div p {
+	font-size: 14px;
+}
+.center {
+	font-size: 12px;
+	color: rgb(185, 185, 185);
+}
+.right {
+	color: rgb(185, 185, 185);
+}
+.right div:nth-child(2) {
+	margin-left: 27%;
+}
+/* second section of the page starts here */
+/* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+/* "more" button properties */
+label {
+	display: none;
+	position: absolute;
+	right: 0%;
+	top: 20%;
+	padding-bottom: 5px;
+	z-index: 3;
+	box-shadow: 0px 0px 2px 1px white;;
+	width: 70px;
+	font-size: 20px;
+	height: 21px;
+	text-align: center;
+	background-image: linear-gradient(red, blue);
+}
+/* on a normal display, it will be hidden */
+label ~ input {
+	display: none;
+}
+/* ASIDE SECTION -2 */
+/* this is the first section heading of the aside section 2 */
+.section-heading {
+	margin-top: 10px;
+	position: relative;
+	margin-bottom: 12px;
+}
+/* adjusting for side by side display */
+.section-heading div,
+.section-heading h1 {
+	display: inline-block;
+}
+.section-heading h1 {
+	font-size: 23px;
+}
+.section-heading div {
+	position: absolute;
+	bottom: 0%;
+	right: 0px;
+	font-size: 14px;
+}
+
+.list {
+	height: 37vh;
+	overflow: auto;
+}
+/* hiding the scrollbar */
+.list::-webkit-scrollbar {
+	display: none;
+}
+/* this is particular item in the "list  container*/
+.list-item {
+	width: 100%;
+	height: 100px;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
+	margin-bottom: 12px;
+}
+/* hovering effect for the list item */
+.list-item:hover {
+	background-color: var(--playlist-items-background-color-on-hover);
+}
+/* adjusting the name and image of the songs relative to their original position */
+.list-item > div:nth-child(1) {
+	width: 100px;
+	height: 100%;
+	position: relative;
+}
+.list-item > div:nth-child(1) > img {
+	width: 100%;
+	height: 100%;
+}
+.author-name {
+	font-size: 12px;
+	color: rgb(185, 185, 185);
+}
+.extra {
+	text-align: right;
+	height: 100%;
+}
+/* ////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+
+
+
+
+
+
+
+/* <--------------music controller bottom side of the page Start from here-------------->   */
+
+
+.music-controller{
+    height: 8.5%;
+    width: 100%;
+    /* border: 1px solid green; */
+    position: fixed;
+    bottom: 0%;
+    display: flex;
+    background-color: rgb(11, 14, 19);
+    padding: 4px;
+    z-index: 3;
+}
+/*<---------- Music controller left side section----------> */
+
+
+.music-controller-left{
+    height: 100%;
+    width: 30%;
+    /* border:1px solid rgb(67, 9, 121); */
+    margin-left: 5%;
+    display: flex;
+}
+
+.music-controller-left a img{
+    height: 100%;
+    width: 90%;
+    border: 1px solid fuchsia;
+    border-radius: 0px;
+    padding: 3px;
+    box-shadow: 0px 0px 1px 2px silver;
+}
+
+.left-side-icon{
+    height: 30%;
+    width: 20%;
+    /* border: 1px solid white; */
+    margin-top: 20px;
+    cursor: pointer;
+    margin-left: 12%;
+}
+
+.music-controller-left a {
+    text-decoration: none;
+}
+
+.left-side-icon i{
+    margin-left: 10px;  
+}
+
+.left-side-icon i:hover{
+    color:fuchsia;
+    opacity: 0.7;
+}
+
+.left-side-text{
+    height: 100%;
+    width: 40%;
+    font-size: 1rem;
+    margin-top: 10px;
+    /* border: 1px solid cyan; */
+}
+.left-side-text-secondary{
+    margin-top: 3px;
+    opacity: 0.4;
+    color: snow;   
+}
+
+
+/*<*************** Music controller left side section closed here*************> */
+
+
+
+/*<------------ Music controller Middle side section Start from here--------------> */
+
+.music-controller-middle{
+
+    height: 100%;
+    width: 70%;
+    /* border:1px solid red; */
+    justify-content: center;
+    
+}
+
+.console-image{
+    height:45%;
+    width:40%;
+    /* border:1px solid white; */
+    margin-left: 30%;
+    justify-content: space-between;
+    display: flex;
+    
+}
+.console-image i{
+    margin-top: 4px;
+    font-size: 1.5rem;
+    opacity: 0.5;
+}
+.console-image i:hover{
+    box-shadow: 0px 0px 2px px whitesmoke;
+    opacity: 1;
+}
+
+.console-slider{
+    height: 50%;
+    width: 60%;
+    margin-left: 19.5%;
+    margin-top: 6px;
+    /* border: 2px solid green; */
+    display: flex;
+    justify-content: space-around;
+    padding: 6px;
+    opacity: 0.7;
+    font-size: 0.9rem;
+}
+.console-slider input{
+    width: 80%;
+    
+}
+
+.console-slider:hover{
+    opacity: 1;
+   
+}
+
+/*<*************** Music controller Middle side section End here**************> */
+
+/*<------------ Music controller Right side section Start from here--------------> */
+
+
+.music-controller-right{
+    height: 100%;
+    width: 30%;
+    /* border:1px solid red; */
+    margin-right:7%;
+    
+    display: flex;
+    opacity: 0.9;
+    letter-spacing: 0.7rem;
+    
+}
+.music-controller-right-icon{   
+    margin-top: 7%; 
+    display: flex;  
+    /* border: 2px solid firebrick; */
+}
+
+.music-controller-right-icon i:hover{
+    opacity: 1;
+    color: rgb(128, 125, 125)
+}
+.music-controller-right-controller{
+    margin-top: 7%;
+    margin-right: 2%;  
+}
+
+
+
+
+/*<*************** Music controller Right side section End here**************> */
+
+/* <--------------music controller --bottom side of the page End  here-------------->   */
+
+
+
+
+
+/* this is the circular thumb, which can be moved across the div */
+.slider::-moz-range-thumb {
+	width: 25px;
+	height: 25px;
+	background: #4caf50;
+	cursor: pointer;
+}
+
+/* third part of the footer */
+/* this contains the extra icons and slider for volume */
+/* this is also a container */
+.extras {
+	width: 20%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+}
